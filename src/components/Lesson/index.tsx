@@ -48,8 +48,8 @@ export function Lesson({
         <header className="flex items-center justify-between">
           {isLessonAvailable ? (
             <span
-              className={`text-sm text-blue-500 font-medium flex items-center gap-2 ${
-                isActive && "text-white"
+              className={`text-sm font-medium flex items-center gap-2 ${
+                isActive ? "text-white" : "text-blue-500"
               }`}
             >
               <CheckCircle size={20} />
