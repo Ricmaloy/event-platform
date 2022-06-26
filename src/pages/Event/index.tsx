@@ -1,14 +1,13 @@
-import { useQuery } from "@apollo/client";
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import { Video } from "../../components/Video";
-import { GET_FIRST_LESSON } from "../../graphql/queries/GET_FIRST_LESSON";
+import { useGetLessonsQuery } from "../../graphql/generated";
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>();
-  const { data } = useQuery(GET_FIRST_LESSON);
+  const { data } = useGetLessonsQuery();
   const navigate = useNavigate();
 
   useEffect(() => {

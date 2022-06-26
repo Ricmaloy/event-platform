@@ -1,21 +1,10 @@
 import { Lesson } from "../Lesson";
-import { GET_LESSONS } from "../../graphql/queries/GET_LESSONS";
-import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-
-interface GetLessonsQueryResponse {
-  lessons: {
-    id: string;
-    title: string;
-    slug: string;
-    availableAt: string;
-    lessonType: "live" | "class";
-  }[];
-}
+import { useGetLessonsQuery } from "../../graphql/generated";
 
 export function Sidebar() {
-  const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS);
-  const { slug  } = useParams<{ slug: string }>();
+  const { data } = useGetLessonsQuery();
+  const { slug } = useParams<{ slug: string }>();
 
   return (
     <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600 h-[calc(100vh_-_83px)] overflow-auto">
