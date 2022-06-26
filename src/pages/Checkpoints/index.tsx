@@ -1,6 +1,7 @@
 import { Challenge } from "../../components/Challenge";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import TshirtIgniteLab from "../../assets/images/tshirt-ignite-lab.png";
 
 export function Checkpoints() {
   return (
@@ -18,7 +19,7 @@ export function Checkpoints() {
                 Rocketseat.
               </p>
             </div>
-            <img src="/src/assets/images/tshirt-ignite-lab.png" alt="" />
+            <img src={TshirtIgniteLab} alt="Camisa Ignite React JS" />
           </div>
           <div className="flex flex-col gap-8"></div>
         </div>
@@ -30,19 +31,19 @@ export function Checkpoints() {
             reward="4 camisetas exclusivas"
             url=""
           />
-           <Challenge
+          <Challenge
             title="Mission checkpoint 02"
             description="Conclua a terceira etapa da nossa missão, responda o formulário e concorra a 4 camisetas exclusivas do Ignite Lab. Formulário disponível até domingo, às 12h00 de Brasília."
             reward="4 camisetas exclusivas"
             url=""
           />
-           <Challenge
+          <Challenge
             title="Mission checkpoint 03"
             description="Conclua a terceira etapa da nossa missão, responda o formulário e concorra a 4 camisetas exclusivas do Ignite Lab. Formulário disponível até domingo, às 12h00 de Brasília."
             reward="4 camisetas exclusivas"
             url=""
           />
-           <Challenge
+          <Challenge
             title="Mission checkpoint 04"
             description="Conclua a terceira etapa da nossa missão, responda o formulário e concorra a 4 camisetas exclusivas do Ignite Lab. Formulário disponível até domingo, às 12h00 de Brasília."
             reward="4 camisetas exclusivas"
