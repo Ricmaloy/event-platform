@@ -6,11 +6,11 @@ import {
   Image,
   Lightning,
 } from "phosphor-react";
-import { LogoFull } from "../../assets/LogoFull";
 
 import "@vime/core/themes/default.css";
 import { useQuery } from "@apollo/client";
 import { GET_LESSON_BY_SLUG } from "../../graphql/queries/GET_LESSON_BY_SLUG";
+import { Footer } from "../Footer";
 
 interface lessonSlug {
   lessonSlug: string;
@@ -34,8 +34,6 @@ export function Video({ lessonSlug }: lessonSlug) {
     variables: { slug: lessonSlug },
   });
 
-  console.log(data);
-
   if (!data) {
     return (
       <div className="flex-1">
@@ -45,7 +43,7 @@ export function Video({ lessonSlug }: lessonSlug) {
   }
 
   return (
-    <div className="flex-1 h-[calc(100vh_-_75px)] overflow-auto">
+    <div className="flex-1 h-[calc(100vh_-_83px)] overflow-auto">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
@@ -95,7 +93,7 @@ export function Video({ lessonSlug }: lessonSlug) {
               className="p-4 text-sm border border-blue-500 text-blue-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-blue-500 hover:text-gray-900 transition-colors"
             >
               <Lightning size={24} />
-              Comunidade do Discord
+              Acesse o desafio
             </a>
           </div>
         </div>
@@ -139,17 +137,7 @@ export function Video({ lessonSlug }: lessonSlug) {
           </a>
         </div>
 
-        <footer className="py-6 border-t border-gray-600 flex justify-between items-center">
-          <div className="flex gap-4 items-center">
-            <LogoFull />
-            <p className="text-gray-300 text-sm">
-              Rocketseat - Todos os direitos reservados
-            </p>
-          </div>
-          <a className="text-gray-300 text-sm" href="#">
-            Políticas e privacidade
-          </a>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
